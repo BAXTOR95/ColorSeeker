@@ -2,6 +2,10 @@
 
 ColorSeeker is a web application built with Flask and Bootstrap5 that allows users to upload images and identify the most dominant colors present in those images. The application uses k-means clustering from the `scikit-learn` library to analyze and determine the main colors.
 
+## Live Version
+
+A live version of ColorSeeker is available at the following link: [https://colorseeker.onrender.com](https://colorseeker.onrender.com).
+
 ## Table of Contents
 
 - [Features](#features)
