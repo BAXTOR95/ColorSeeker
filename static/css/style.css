@@ -1,0 +1,80 @@
+.color-box {
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	border-radius: 0.5rem;
+	border: 2px solid #ddd;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+	background-color: #f4f4f9;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* Ensure the full height of the screen is occupied */
+}
+
+.container {
+	flex: 1; /* Makes the container flex and occupy available space */
+}
+
+form {
+	background-color: #ffffff;
+	border-radius: 1rem;
+}
+
+.preview-container {
+	max-width: 100%;
+	margin-top: 1rem;
+	overflow: hidden;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.preview-image {
+	height: auto;
+	max-width: 100%;
+	max-height: 250px; /* Adjusted max-height for smaller preview */
+}
+
+/* Responsive adjustments for better viewing on all devices */
+@media (max-width: 768px) {
+	.color-box {
+		width: 80px;
+		height: 80px;
+	}
+
+	.preview-image {
+		max-height: 200px;
+	}
+}
+
+/* Footer specific styles */
+footer {
+	background-color: #f8f9fa; /* Light grey background */
+	color: #6c757d; /* Footer text color */
+	line-height: 1.7;
+	padding: 2rem 0; /* Top and Bottom padding */
+	margin-top: auto; /* Pushes the footer to the bottom of the layout */
+}
+
+footer a {
+	color: #6c757d; /* Links color */
+}
+
+footer a:hover {
+	color: #343a40; /* Links hover color */
+}
+
+footer p {
+	margin-bottom: 0.5rem;
+}
+
+footer i.fas,
+footer i.fab {
+	margin-right: 8px;
+}

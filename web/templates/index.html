@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>ColorSeeker</title>
+		<!-- Font Awesome icons (free version)-->
+		<script
+			src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- Bootstrap CSS -->
+		{{ bootstrap.load_css() }}
+		<!-- Custom CSS -->
+		<link
+			href="{{ url_for('static', filename='css/style.css') }}"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="container py-5 mb-auto">
+			<div class="text-center mb-4">
+				<h1 class="display-4">Find the Most Common Colors in Your Image</h1>
+				<p class="lead">
+					Upload an image, and discover the colors that define it.
+				</p>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<form
+						method="post"
+						enctype="multipart/form-data"
+						class="card p-3 shadow-sm"
+					>
+						<div class="mb-3">
+							<label for="file" class="form-label">Upload Image</label>
+							<input
+								type="file"
+								class="form-control"
+								id="file"
+								name="file"
+								accept="image/*"
+							/>
+						</div>
+						<div class="d-grid">
+							<button type="submit" class="btn btn-primary btn-lg">
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			{% if colors %}
+			<div class="mt-5">
+				<h3 class="text-center">Most Common Colors</h3>
+				<div class="d-flex flex-wrap justify-content-center">
+					{% for color in colors %}
+					<div
+						class="color-box m-2 shadow"
+						style="background-color: {{ color }}"
+					></div>
+					{% endfor %}
+				</div>
+				<div class="mt-3 text-center">
+					<h3>Preview</h3>
+					<div class="preview-container">
+						<img
+							src="{{ image_path }}"
+							class="img-fluid rounded preview-image"
+							alt="Uploaded Image"
+						/>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-auto text-center text-lg-start text-muted">
+			<section
+				class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+			>
+				<!-- Left -->
+				<div class="me-5 d-none d-lg-block">
+					<span>Connect with me on social media:</span>
+				</div>
+				<!-- Left -->
+
+				<!-- Right -->
+				<div>
+					<a href="https://twitter.com/BAXTOR95" class="me-4 text-reset">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/brian-arriaga-s-28845b138/"
+						class="me-4 text-reset"
+					>
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="https://github.com/BAXTOR95" class="me-4 text-reset">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+				<!-- Right -->
+			</section>
+
+			<div
+				class="text-center p-4"
+				style="background-color: rgba(0, 0, 0, 0.05)"
+			>
+				© {{ current_year }} ColorSeeker, Inc. All rights reserved.
+			</div>
+		</footer>
+		<!-- Footer -->
+
+		<!-- Bootstrap core JS-->
+		{{ bootstrap.load_js() }}
+		<!-- Custom JS -->
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+</html>
